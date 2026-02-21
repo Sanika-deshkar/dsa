@@ -1,0 +1,17 @@
+public class TilingProblem{
+    public static int TilingWays(int n){
+        if(n==0||n==1){
+            return 1;
+        }
+        int vertical = TilingWays(n-1); //vertical choice
+        int horizontal = TilingWays(n-2); //horizontal choice
+        return vertical+horizontal;
+        //OR
+        // return TilingWays(n-1)+TilingWays(n-2);
+    }
+
+    public static void main(String[] args) {
+        int n=4;
+        System.out.println(TilingWays(n));
+    }
+}
